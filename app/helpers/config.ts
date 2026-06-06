@@ -76,16 +76,28 @@ export const blogPosts = [
     href: "/blog/building-a-design-system-that-scales",
   },
   {
-    title: "Building Systems, Not Screens",
-    slug: "building-systems-not-screens",
+    title: "From Components to Platforms",
+    slug: "from-components-to-platforms",
     category: "Frontend Architecture",
     excerpt:
-      "The most impactful frontend work rarely starts with individual screens. It starts with systems. As products grow, the challenge is rarely building a single interface — it's building a foundation that allows hundreds of interfaces to evolve together.",
+      "Great products are built on more than individual features. Learn how shared foundations evolve from reusable components into platforms that enable teams to scale.",
     tags: ["Architecture", "Design Systems", "Frontend"],
     image: "blog-2",
     date: "",
     readTime: 3,
-    href: "/blog/building-systems-not-screens",
+    href: "/blog/from-components-to-platforms",
+  },
+  {
+    title: "Designing for Developer Experience",
+    slug: "designing-for-developer-experience",
+    category: "Developer Experience",
+    excerpt:
+      "When teams discuss user experience, the conversation usually focuses on customers. But there's another experience that often has a significant impact on product quality: developer experience. A thoughtful developer experience doesn't just make engineers happier. It makes products better.",
+    tags: ["Developer Experience", "Engineering Culture", "Frontend"],
+    image: "blog-3",
+    date: "",
+    readTime: 5,
+    href: "/blog/designing-for-developer-experience",
   },
 ];
 

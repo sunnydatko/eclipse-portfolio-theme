@@ -19,9 +19,9 @@ import BrandMark from "./BrandMark";
 const drawerWidth = 320;
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Blog", href: "#blog" },
+  { name: "About", href: "/#about" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Blog", href: "/#blog" },
 ];
 
 export default function ResponsiveMenu() {
@@ -117,7 +117,7 @@ export default function ResponsiveMenu() {
               </Button>
             ))}
             <Button
-              href="#contact"
+              href="/#contact"
               variant="contained"
               sx={{ ml: 1.5, px: 2.5, fontSize: 14 }}
             >

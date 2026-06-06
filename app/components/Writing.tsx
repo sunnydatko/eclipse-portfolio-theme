@@ -8,10 +8,12 @@ import Typography from "@mui/material/Typography";
 import { blogPosts } from "../helpers/config";
 import blog1 from "../images/blog-1.png";
 import blog2 from "../images/blog-2.png";
+import blog3 from "../images/blog-3.png";
 
 const imageMap: Record<string, StaticImageData> = {
   "blog-1": blog1,
   "blog-2": blog2,
+  "blog-3": blog3,
 };
 
 export default function Writing() {
@@ -98,6 +100,7 @@ export default function Writing() {
                   src={imageMap[post.image]}
                   alt={post.title}
                   fill
+                  priority={index === 0}
                   style={{
                     objectFit: "cover",
                     filter: "brightness(1.15) contrast(1.05)",

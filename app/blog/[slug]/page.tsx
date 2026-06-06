@@ -12,10 +12,12 @@ import Footer from "../../components/Footer";
 import ReadingProgress from "../../components/ReadingProgress";
 import blog1 from "../../images/blog-1.png";
 import blog2 from "../../images/blog-2.png";
+import blog3 from "../../images/blog-3.png";
 
 const imageMap: Record<string, StaticImageData> = {
   "blog-1": blog1,
   "blog-2": blog2,
+  "blog-3": blog3,
 };
 
 export async function generateStaticParams() {
@@ -245,112 +247,342 @@ const articleContent: Record<string, React.ReactNode> = {
       </P>
     </>
   ),
-  "building-systems-not-screens": (
+  "from-components-to-platforms": (
     <>
       <P>
-        When people think about frontend development, they often think about
-        screens.
+        Many engineering initiatives begin with a simple goal: solve a problem
+        that exists today.
       </P>
-      <P>Buttons. Forms. Navigation. Dashboards.</P>
+      <P>A new component is created to improve consistency.</P>
+      <P>A utility is introduced to reduce duplication.</P>
       <P>
-        Those are certainly part of the job, but the most impactful frontend
-        work rarely starts with individual screens. Instead, it starts with
-        systems.
+        A shared pattern emerges because multiple teams need the same
+        functionality.
       </P>
+      <P>Over time, these individual solutions begin to form something larger.</P>
+      <P>A platform.</P>
       <P>
-        As products grow, complexity tends to grow with them. New features
-        introduce new requirements. Teams expand. Design evolves. What once felt
-        simple becomes increasingly difficult to maintain.
-      </P>
-      <P>The challenge is rarely building a single interface.</P>
-      <P>
-        The challenge is building a foundation that allows hundreds of
-        interfaces to evolve together.
+        The most impactful engineering work often isn&apos;t a single feature or
+        component. It&apos;s the foundation that enables entire teams to build
+        faster, more consistently, and with greater confidence.
       </P>
 
-      <Heading>The Cost of Local Decisions</Heading>
+      <Heading>The Evolution of Shared Systems</Heading>
+      <P>Most platforms don&apos;t start as platforms.</P>
+      <P>They begin as practical solutions to recurring problems.</P>
+      <P>A design system starts with a few reusable components.</P>
+      <P>A shared API layer begins with common data-fetching logic.</P>
       <P>
-        Most technical debt doesn&apos;t come from bad engineers making poor
-        decisions. It comes from reasonable decisions made in isolation.
+        A deployment pipeline emerges from a desire to reduce manual work.
       </P>
-      <P>A team needs a button variation for a new feature.</P>
-      <P>Another team introduces a slightly different form layout.</P>
+      <P>As adoption grows, these solutions become infrastructure.</P>
       <P>
-        A third team creates its own implementation of a common pattern because
-        it was faster than finding an existing solution.
+        What was once built for a single team becomes a resource that supports
+        many.
       </P>
-      <P>Each decision makes sense in the moment.</P>
-      <P>Collectively, they create fragmentation.</P>
       <P>
-        Over time, products become collections of exceptions rather than
-        systems.
+        The challenge shifts from solving a local problem to supporting an
+        ecosystem.
       </P>
 
-      <Heading>Thinking in Foundations</Heading>
-      <P>The most sustainable products are built on shared foundations.</P>
-      <P>These foundations often include:</P>
+      <Heading>Beyond Reusability</Heading>
+      <P>Reusability is often the first goal of shared systems.</P>
+      <P>Build it once.</P>
+      <P>Use it everywhere.</P>
+      <P>While important, reusability alone isn&apos;t enough.</P>
+      <P>Successful platforms provide:</P>
       <Ul
         items={[
-          "Design tokens",
-          "Component libraries",
-          "Accessibility standards",
-          "Shared patterns",
-          "Architectural conventions",
+          "Consistency",
+          "Reliability",
+          "Documentation",
+          "Discoverability",
+          "Governance",
         ]}
       />
-      <P>The goal isn&apos;t restriction.</P>
-      <P>The goal is alignment.</P>
       <P>
-        When teams operate from a shared foundation, they spend less time
-        solving the same problems repeatedly and more time creating value for
-        users.
+        Teams should not only be able to use a platform—they should want to use
+        it.
+      </P>
+      <P>The best platforms make adoption feel natural.</P>
+
+      <Heading>Reducing Complexity at Scale</Heading>
+      <P>As organizations grow, complexity increases.</P>
+      <P>More teams.</P>
+      <P>More products.</P>
+      <P>More requirements.</P>
+      <P>
+        Without shared foundations, every team is forced to solve similar
+        problems independently.
+      </P>
+      <P>This often leads to:</P>
+      <Ul
+        items={[
+          "Duplicate implementations",
+          "Inconsistent user experiences",
+          "Increased maintenance costs",
+          "Slower development cycles",
+        ]}
+      />
+      <P>
+        Platforms help centralize common concerns so teams can focus on building
+        product value rather than rebuilding infrastructure.
+      </P>
+      <P>A strong platform doesn&apos;t eliminate complexity.</P>
+      <P>It absorbs complexity.</P>
+
+      <Heading>Platforms as Multipliers</Heading>
+      <P>
+        One of the most valuable characteristics of platform work is leverage.
+      </P>
+      <P>A feature may benefit thousands of users.</P>
+      <P>
+        A platform improvement may benefit every engineer working on every
+        future feature.
+      </P>
+      <P>The impact compounds over time.</P>
+      <P>
+        A well-designed component library can accelerate dozens of product
+        initiatives.
+      </P>
+      <P>
+        An improved deployment workflow can save countless hours across
+        engineering teams.
+      </P>
+      <P>
+        A shared foundation creates value far beyond its original
+        implementation.
       </P>
 
-      <Heading>Systems Create Velocity</Heading>
-      <P>It&apos;s easy to assume that standards slow teams down.</P>
-      <P>In practice, the opposite is often true.</P>
-      <P>A well-designed system reduces decision fatigue.</P>
+      <Heading>Adoption Is the Real Measure of Success</Heading>
+      <P>Platform teams often focus on what they build.</P>
+      <P>The more important question is whether anyone uses it.</P>
+      <P>Adoption is the clearest signal of success.</P>
+      <P>Engineers naturally gravitate toward systems that are:</P>
+      <Ul
+        items={[
+          "Easy to understand",
+          "Well documented",
+          "Reliable",
+          "Flexible",
+          "Consistent",
+        ]}
+      />
       <P>
-        Instead of debating spacing, typography, interaction states, and
-        implementation details for every feature, teams can focus on solving the
-        unique problems that matter.
+        If teams continually work around a platform, the issue is rarely
+        adoption itself.
       </P>
-      <P>Consistency becomes the default rather than the exception.</P>
-      <P>As products scale, this compounds.</P>
       <P>
-        A small investment in shared foundations can save hundreds of hours
-        across an organization.
+        It&apos;s usually a sign that the platform isn&apos;t solving the right
+        problems.
+      </P>
+      <P>The best platforms earn trust through usefulness.</P>
+
+      <Heading>Building for the Future</Heading>
+      <P>
+        One of the unique challenges of platform work is balancing current needs
+        with future growth.
+      </P>
+      <P>Build too narrowly and the platform becomes restrictive.</P>
+      <P>Build too broadly and it becomes unnecessarily complex.</P>
+      <P>
+        Finding the right balance requires understanding not only today&apos;s
+        requirements, but also the direction of the organization.
+      </P>
+      <P>The goal isn&apos;t to predict the future perfectly.</P>
+      <P>It&apos;s to create foundations that can evolve alongside it.</P>
+
+      <Heading>Looking Ahead</Heading>
+      <P>Components solve immediate problems.</P>
+      <P>Platforms create long-term leverage.</P>
+      <P>
+        The transition from one to the other is rarely defined by a single
+        project. Instead, it happens gradually through thoughtful decisions,
+        shared standards, and a commitment to reducing friction for others.
+      </P>
+      <P>
+        The most effective engineering organizations don&apos;t just build
+        products.
+      </P>
+      <P>They build the foundations that make great products possible.</P>
+      <P>That&apos;s where platforms begin.</P>
+    </>
+  ),
+  "designing-for-developer-experience": (
+    <>
+      <P>
+        When teams discuss user experience, the conversation usually focuses on
+        customers.
+      </P>
+      <P>How quickly can users complete a task?</P>
+      <P>How intuitive is the interface?</P>
+      <P>How accessible is the product?</P>
+      <P>
+        These are important questions, but there&apos;s another experience that
+        often has a significant impact on product quality: developer experience.
+      </P>
+      <P>
+        The tools, systems, and workflows engineers use every day shape how
+        quickly teams can deliver value. They influence code quality,
+        consistency, maintainability, and even employee satisfaction.
+      </P>
+      <P>
+        A thoughtful developer experience doesn&apos;t just make engineers
+        happier. It makes products better.
       </P>
 
-      <Heading>The Human Side of Architecture</Heading>
-      <P>Technical systems are only part of the equation.</P>
-      <P>The best systems also create alignment between people.</P>
+      <Heading>Developer Experience Is Product Design</Heading>
+      <P>Developer experience is often associated with tooling.</P>
+      <P>Build systems.</P>
+      <P>CI pipelines.</P>
+      <P>Component libraries.</P>
+      <P>Documentation.</P>
       <P>
-        Designers, engineers, and product managers benefit from shared language
-        and shared expectations.
+        While these are important, developer experience is ultimately a design
+        problem.
       </P>
+      <P>Every workflow has users.</P>
+      <P>Every API has consumers.</P>
+      <P>Every component library has an audience.</P>
       <P>
-        When everyone understands the building blocks, collaboration becomes
-        easier.
+        The same principles that create great customer experiences can be
+        applied to internal engineering systems.
       </P>
-      <P>Communication becomes clearer.</P>
-      <P>Decisions become more predictable.</P>
-      <P>Architecture is ultimately about creating clarity.</P>
-      <P>Not just for code, but for teams.</P>
+      <P>Clear interfaces. Consistent patterns. Predictable behavior.</P>
+      <P>The goal is to make the right path the easiest path.</P>
 
-      <Heading>Looking Forward</Heading>
-      <P>Technology changes quickly.</P>
-      <P>Frameworks evolve. Tools improve. Best practices shift.</P>
+      <Heading>Reducing Friction</Heading>
+      <P>Small sources of friction add up quickly.</P>
+      <P>A confusing component API.</P>
+      <P>Missing documentation.</P>
+      <P>Inconsistent patterns.</P>
+      <P>Slow build times.</P>
       <P>
-        What tends to last are the principles behind strong systems:
-        consistency, clarity, maintainability, and thoughtful design.
+        Individually, these problems may seem minor. Collectively, they create a
+        constant tax on development.
       </P>
-      <P>Products are built one feature at a time.</P>
-      <P>Great platforms are built through systems.</P>
       <P>
-        The most valuable engineering work often isn&apos;t the screen users
-        see today—it&apos;s the foundation that enables everything that comes
-        next.
+        Over time, teams spend more energy navigating complexity than solving
+        customer problems.
+      </P>
+      <P>
+        Improving developer experience often means removing unnecessary
+        decisions.
+      </P>
+      <P>
+        When systems are intuitive, engineers can focus on building instead of
+        figuring out how to build.
+      </P>
+
+      <Heading>The Value of Shared Foundations</Heading>
+      <P>
+        Many developer experience improvements come from investing in shared
+        foundations.
+      </P>
+      <P>Examples include:</P>
+      <Ul
+        items={[
+          "Design systems",
+          "Reusable component libraries",
+          "Consistent coding standards",
+          "Automated testing",
+          "Documentation",
+          "Development tooling",
+        ]}
+      />
+      <P>
+        These investments rarely produce immediate customer-facing features.
+      </P>
+      <P>However, they create leverage.</P>
+      <P>
+        A small improvement made once can benefit every engineer and every
+        future project.
+      </P>
+      <P>The impact compounds over time.</P>
+
+      <Heading>Documentation Is a Feature</Heading>
+      <P>Documentation is often treated as an afterthought.</P>
+      <P>
+        In reality, it is one of the most important parts of any developer
+        experience.
+      </P>
+      <P>Good documentation reduces uncertainty.</P>
+      <P>It helps engineers make decisions confidently.</P>
+      <P>
+        It accelerates onboarding and improves adoption of shared systems.
+      </P>
+      <P>
+        Most importantly, it allows knowledge to scale beyond the individuals
+        who originally built the system.
+      </P>
+      <P>
+        A great component with poor documentation often feels unusable.
+      </P>
+      <P>
+        A good component with excellent documentation can become indispensable.
+      </P>
+
+      <Heading>Automation Creates Momentum</Heading>
+      <P>The best developer experiences remove repetitive work.</P>
+      <P>
+        Automation allows teams to spend less time on manual processes and more
+        time solving meaningful problems.
+      </P>
+      <P>This can take many forms:</P>
+      <Ul
+        items={[
+          "Automated testing",
+          "Code generation",
+          "Continuous integration",
+          "Linting and formatting",
+          "Deployment pipelines",
+        ]}
+      />
+      <P>The goal is not automation for its own sake.</P>
+      <P>The goal is creating momentum.</P>
+      <P>
+        Every task that happens automatically is one less task competing for an
+        engineer&apos;s attention.
+      </P>
+
+      <Heading>Building for Future Teams</Heading>
+      <P>
+        One of the most overlooked aspects of developer experience is that the
+        primary beneficiaries are often future engineers.
+      </P>
+      <P>The engineer joining six months from now.</P>
+      <P>The teammate maintaining a feature two years later.</P>
+      <P>
+        The developer trying to understand a decision they weren&apos;t involved
+        in making.
+      </P>
+      <P>
+        Thoughtful systems create clarity long after the original implementation
+        is complete.
+      </P>
+      <P>Good developer experience is an investment in future productivity.</P>
+
+      <Heading>Looking Ahead</Heading>
+      <P>Products evolve quickly.</P>
+      <P>Teams grow.</P>
+      <P>Requirements change.</P>
+      <P>
+        The engineering organizations that scale most effectively are often the
+        ones that treat developer experience as a first-class concern.
+      </P>
+      <P>
+        When engineers can move quickly with confidence, everyone benefits.
+      </P>
+      <P>Teams collaborate more effectively.</P>
+      <P>Products become more consistent.</P>
+      <P>Customers receive better experiences.</P>
+      <P>
+        Developer experience is ultimately about removing friction between an
+        idea and its implementation.
+      </P>
+      <P>
+        The easier it is to build the right thing, the more likely great
+        products are to emerge.
       </P>
     </>
   ),
