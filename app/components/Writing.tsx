@@ -154,7 +154,7 @@ export default function Writing() {
                       fontSize: 11,
                       letterSpacing: "0.18em",
                       textTransform: "uppercase",
-                      color: "grey.700",
+                      color: "grey.400",
                     }}
                   >
                     · {post.readTime} min read
@@ -166,7 +166,7 @@ export default function Writing() {
                         fontSize: 11,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "grey.700",
+                        color: "grey.400",
                       }}
                     >
                       · {post.date}

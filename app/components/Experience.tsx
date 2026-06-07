@@ -97,7 +97,7 @@ sx={{ color: "common.white" }}
 
             <Typography
               sx={{
-                color: "grey.500",
+                color: "grey.400",
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: { xs: 13, md: 14 },
                 letterSpacing: "0.04em",

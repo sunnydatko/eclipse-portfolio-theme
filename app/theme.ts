@@ -7,8 +7,8 @@ const theme = createTheme({
     mode: "dark",
     primary: {
       light: "#93C5FD",
-      main: "#3B82F6",
-      dark: "#2563EB",
+      main: "#4B7DF4",
+      dark: "#3560E8",
     },
     secondary: {
       light: "#1E3A8A",
@@ -27,7 +27,7 @@ const theme = createTheme({
     grey: {
       100: "#F8FAFC",
       200: "#E2E8F0",
-      300: "#CBD5E1",
+      300: "#D7E2EE",
       400: "#94A3B8",
       500: "#64748B",
       600: "#475569",
@@ -81,7 +81,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textDecoration: "none",
-          color: "#3B82F6",
+          color: "#4B7DF4",
           transition: "color 0.3s",
           position: "relative",
           paddingBottom: "3px",
