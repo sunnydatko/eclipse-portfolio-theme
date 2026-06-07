@@ -92,7 +92,13 @@ export default function ResponsiveMenu() {
             href="/"
             aria-label="Home"
             underline="none"
-            sx={{ paddingBottom: 0, "&::before": { display: "none" } }}
+            sx={{
+              paddingBottom: 0,
+              "&::before": { display: "none" },
+              opacity: 0.7,
+              transition: "opacity 0.2s ease",
+              "&:hover": { opacity: 1 },
+            }}
           >
             <BrandMark starSize={22} fontSize={16} />
           </Link>
