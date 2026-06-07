@@ -6,11 +6,14 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 const skills = [
-  "React",
-  "React Native",
+  "LLMs",
+  "AI Agents",
+  "RAG",
+  "Multi-Agent Systems",
+  "Prompt Engineering",
+  "Python",
   "TypeScript",
-  "JavaScript",
-  "Accessibility",
+  "System Design",
 ];
 
 export default function About() {
@@ -49,7 +52,7 @@ export default function About() {
         </Typography>
 
         <Typography className="reveal" style={{ transitionDelay: "0.1s" }} variant="h3" sx={{ mb: 4 }}>
-          Turning product ideas into polished user experiences
+          Engineering intelligent systems at the frontier of what&apos;s possible
         </Typography>
 
         <Box
@@ -78,7 +81,7 @@ export default function About() {
             mb: 0,
           }}
         >
-          I'm a Senior Software Engineer with a passion for building scalable products, thoughtful design systems, and user experiences that feel effortless to use. I enjoy working across product, design, and engineering to turn ideas into polished, maintainable solutions.
+          I&apos;m an AI engineer focused on designing and building intelligent systems — from multi-agent pipelines and RAG architectures to production LLM integrations that deliver real business value. I work at the intersection of model capability and systems design, turning complex AI research into reliable, scalable infrastructure that teams can build on.
         </Typography>
       </Container>
     </Box>

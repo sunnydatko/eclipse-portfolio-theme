@@ -29,7 +29,7 @@ const Heading = ({ children }: { children: React.ReactNode }) => (
     variant="h4"
     sx={{
       color: "common.white",
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-cormorant-garamond), serif",
       fontWeight: 600,
       fontSize: { xs: "20px", md: "24px" },
       mt: 6,
@@ -76,278 +76,281 @@ const Ul = ({ items }: { items: string[] }) => (
 );
 
 const articleContent: Record<string, React.ReactNode> = {
-  "building-a-design-system-that-scales": (
+  "building-an-agent-toolkit-that-scales": (
     <>
       <P>
-        As products grow, so do the challenges of maintaining consistency. What
-        starts as a handful of reusable components can quickly evolve into dozens
-        of patterns, competing implementations, and subtle design inconsistencies
-        spread across multiple teams.
+        As AI systems grow, so do the challenges of maintaining consistency
+        across agent behaviors. What starts as a handful of tool definitions can
+        quickly evolve into dozens of overlapping capabilities, competing
+        implementations, and subtle contract mismatches spread across multiple
+        agents.
       </P>
       <P>
-        A design system is often viewed as a collection of UI components, but
-        successful systems provide much more than that. They establish a shared
-        language between design and engineering, reduce duplicated effort, and
-        create a foundation that allows teams to move faster without sacrificing
-        quality.
+        An agent toolkit is often viewed as a collection of tool definitions,
+        but successful systems provide much more than that. They establish a
+        shared contract between models and infrastructure, reduce duplicated
+        logic, and create a foundation that lets agents reason and act with
+        greater confidence.
       </P>
 
       <Heading>The Challenge of Growth</Heading>
       <P>
-        Most products don&apos;t begin with a dedicated design system. Teams move
-        quickly, prioritize shipping features, and optimize for short-term
-        delivery. Over time, this often results in multiple versions of similar
-        components, inconsistent styling decisions, and increasing maintenance
-        costs.
+        Most agent systems don&apos;t begin with a dedicated toolkit. Teams move
+        quickly, prioritize shipping capabilities, and optimize for short-term
+        results. Over time, this often leads to multiple tools serving similar
+        purposes, inconsistent return shapes, and increasing prompt complexity.
       </P>
       <P>Common symptoms include:</P>
       <Ul
         items={[
-          "Several button variations serving the same purpose",
-          "Inconsistent spacing and typography across pages",
-          "Repeated styling logic throughout the codebase",
-          "Accessibility behaviors implemented differently between teams",
-          "Increased effort required to maintain and update UI patterns",
+          "Several tools overlapping in purpose and scope",
+          "Inconsistent response schemas across similar operations",
+          "Repeated context-setting logic in every system prompt",
+          "Error handling implemented differently across agents",
+          "Increasing token costs as redundant context accumulates",
         ]}
       />
       <P>
-        These issues rarely appear overnight. Instead, they accumulate gradually
-        as products evolve.
+        These issues rarely surface immediately. They accumulate gradually as
+        the number of agents and capabilities grows.
       </P>
 
-      <Heading>Start with Foundations</Heading>
+      <Heading>Start with Contracts</Heading>
       <P>
-        Before building components, establish foundational design decisions.
+        Before building tools, establish foundational data contracts.
       </P>
       <P>These often include:</P>
       <Ul
         items={[
-          "Color tokens",
-          "Typography scales",
-          "Spacing systems",
-          "Border radius values",
-          "Elevation and shadow patterns",
-          "Interaction states",
+          "Canonical input and output schemas",
+          "Shared error envelope formats",
+          "Consistent naming conventions",
+          "Authentication and authorization patterns",
+          "Rate limiting and retry semantics",
+          "Observability hooks",
         ]}
       />
       <P>
-        By defining these primitives first, teams can build components on top of
-        a consistent foundation rather than introducing new values with every
+        By defining these primitives first, teams can build tools on top of a
+        consistent foundation rather than introducing new shapes with every
         implementation.
       </P>
       <P>
-        When foundational decisions are centralized, updates become significantly
-        easier. A single change can propagate throughout the entire system
-        instead of requiring manual updates across dozens of screens.
+        When foundational contracts are centralized, updates propagate cleanly.
+        A single schema change can flow through the entire toolkit instead of
+        requiring manual updates across dozens of prompts.
       </P>
 
-      <Heading>Components Are Products</Heading>
+      <Heading>Tools Are Products</Heading>
       <P>
-        One of the most valuable mindset shifts is treating components as
-        products rather than implementation details.
+        One of the most valuable mindset shifts is treating tools as products
+        rather than implementation details.
       </P>
-      <P>Well-designed components should be:</P>
+      <P>Well-designed agent tools should be:</P>
       <Ul
         items={[
-          "Flexible without being overly complex",
-          "Accessible by default",
-          "Well documented",
-          "Consistent across use cases",
-          "Easy to adopt",
+          "Scoped to a single, composable responsibility",
+          "Safe to call idempotently when possible",
+          "Described clearly enough for a model to self-select",
+          "Consistent in behavior across invocation patterns",
+          "Easy for both humans and agents to adopt",
         ]}
       />
       <P>
-        A component&apos;s success isn&apos;t measured by how many props it
-        supports. It&apos;s measured by how effectively it solves common
-        interface problems while remaining simple to use.
+        A tool&apos;s success isn&apos;t measured by how many parameters it
+        accepts. It&apos;s measured by how reliably a model can invoke it
+        correctly with minimal prompt engineering.
       </P>
       <P>
-        The goal is not to create infinitely customizable components. The goal
-        is to create reliable building blocks that encourage consistency.
+        The goal is not to create infinitely flexible tools. The goal is to
+        create reliable primitives that agents can compose with confidence.
       </P>
 
-      <Heading>Documentation Matters</Heading>
+      <Heading>Documentation That Models Can Read</Heading>
       <P>
-        Even the best component library will struggle without clear
-        documentation.
+        Even the best toolkit will underperform without clear documentation —
+        and in agentic systems, the primary reader is the model itself.
       </P>
-      <P>Documentation should answer questions such as:</P>
+      <P>Tool descriptions should answer:</P>
       <Ul
         items={[
-          "When should this component be used?",
-          "When should it not be used?",
-          "What variants are available?",
-          "What accessibility considerations exist?",
-          "What common patterns should teams follow?",
+          "When should this tool be called?",
+          "When should it not be called?",
+          "What does each parameter represent?",
+          "What will the response contain?",
+          "What errors might occur and how should they be handled?",
         ]}
       />
       <P>
-        Good documentation reduces uncertainty and helps maintain consistency as
-        organizations grow.
+        Good descriptions reduce hallucination, lower prompt complexity, and
+        help models make better decisions at inference time.
       </P>
       <P>
-        More importantly, it lowers the barrier to adoption for new team
-        members.
-      </P>
-
-      <Heading>Design and Engineering Partnership</Heading>
-      <P>
-        Design systems are most successful when they are owned collaboratively.
-      </P>
-      <P>
-        Designers contribute visual language, interaction patterns, and
-        usability considerations. Engineers contribute implementation details,
-        accessibility expertise, and long-term maintainability.
-      </P>
-      <P>
-        Neither discipline can create an effective design system in isolation.
-      </P>
-      <P>
-        Strong collaboration helps ensure that components are both visually
-        consistent and technically sustainable.
+        More importantly, they let the toolkit evolve without requiring
+        corresponding prompt rewrites.
       </P>
 
-      <Heading>Measure Adoption, Not Component Count</Heading>
+      <Heading>Human and Agent Collaboration</Heading>
       <P>
-        A common mistake is evaluating success based on the number of components
-        created.
+        Agent toolkits are most successful when they are owned collaboratively
+        by the humans who build them and the agents that use them.
       </P>
       <P>
-        A large component library does not necessarily indicate a healthy system.
+        Engineers define capability boundaries, security constraints, and
+        long-term maintainability. Models surface where tooling is ambiguous,
+        where schemas are confusing, and where behavior diverges from intent.
+      </P>
+      <P>
+        Treating model failures as design feedback — rather than prompt failures
+        — is one of the most powerful practices in agentic development.
+      </P>
+      <P>
+        Strong iteration loops help ensure that tools are both technically sound
+        and practically useful to the agents relying on them.
+      </P>
+
+      <Heading>Measure Reliability, Not Tool Count</Heading>
+      <P>
+        A common mistake is evaluating success based on the number of tools
+        available.
+      </P>
+      <P>
+        A large toolkit does not necessarily indicate a capable or reliable
+        system.
       </P>
       <P>More meaningful indicators include:</P>
       <Ul
         items={[
-          "Reduced implementation time for new features",
-          "Improved consistency across products",
-          "Increased accessibility compliance",
-          "Higher component adoption rates",
-          "Reduced UI-related defects",
+          "Reduced tool call error rates",
+          "Improved task completion across diverse prompts",
+          "Lower average tokens required per successful workflow",
+          "Higher tool reuse across different agent contexts",
+          "Reduced incidents caused by incorrect tool selection",
         ]}
       />
       <P>
-        The goal is not to build more components. The goal is to make product
-        development easier and more consistent.
+        The goal is not to build more tools. The goal is to make agent workflows
+        more reliable and more consistent.
       </P>
 
       <Heading>Looking Ahead</Heading>
       <P>
-        Design systems are never truly finished. They evolve alongside products,
-        teams, and user needs.
+        Agent toolkits are never truly finished. They evolve alongside model
+        capabilities, product requirements, and the agents that depend on them.
       </P>
       <P>
-        The most successful systems balance stability with flexibility. They
-        provide enough structure to maintain consistency while remaining
-        adaptable to future requirements.
+        The most successful toolkits balance stability with extensibility. They
+        provide enough structure for agents to act predictably while remaining
+        adaptable to future capabilities.
       </P>
       <P>
-        When approached thoughtfully, a design system becomes more than a UI
-        library. It becomes a shared foundation that enables teams to build
-        better products faster, with greater confidence and consistency.
+        When approached thoughtfully, an agent toolkit becomes more than a list
+        of functions. It becomes shared infrastructure that enables any model,
+        on any team, to act with greater accuracy and confidence.
       </P>
     </>
   ),
-  "from-components-to-platforms": (
+  "from-models-to-platforms": (
     <>
       <P>
-        Many engineering initiatives begin with a simple goal: solve a problem
-        that exists today.
+        Many AI initiatives begin with a simple goal: get a model to do
+        something useful.
       </P>
-      <P>A new component is created to improve consistency.</P>
-      <P>A utility is introduced to reduce duplication.</P>
+      <P>A prompt is written to summarize documents.</P>
+      <P>A tool is added to look up customer data.</P>
       <P>
         A shared pattern emerges because multiple teams need the same
-        functionality.
+        capability.
       </P>
       <P>Over time, these individual solutions begin to form something larger.</P>
       <P>A platform.</P>
       <P>
-        The most impactful engineering work often isn&apos;t a single feature or
-        component. It&apos;s the foundation that enables entire teams to build
-        faster, more consistently, and with greater confidence.
+        The most impactful AI work often isn&apos;t a single model call or a
+        clever prompt. It&apos;s the infrastructure that enables entire teams to
+        ship agents faster, more reliably, and with greater confidence.
       </P>
 
       <Heading>The Evolution of Shared Systems</Heading>
-      <P>Most platforms don&apos;t start as platforms.</P>
+      <P>Most AI platforms don&apos;t start as platforms.</P>
       <P>They begin as practical solutions to recurring problems.</P>
-      <P>A design system starts with a few reusable components.</P>
-      <P>A shared API layer begins with common data-fetching logic.</P>
+      <P>An agent framework starts with a few reusable tool definitions.</P>
+      <P>A shared context layer begins with common prompt scaffolding.</P>
       <P>
-        A deployment pipeline emerges from a desire to reduce manual work.
+        An orchestration system emerges from a need to chain model calls
+        reliably.
       </P>
       <P>As adoption grows, these solutions become infrastructure.</P>
       <P>
-        What was once built for a single team becomes a resource that supports
-        many.
+        What was once built for a single agent becomes a foundation that
+        supports many.
       </P>
       <P>
         The challenge shifts from solving a local problem to supporting an
-        ecosystem.
+        ecosystem of models and workflows.
       </P>
 
-      <Heading>Beyond Reusability</Heading>
-      <P>Reusability is often the first goal of shared systems.</P>
-      <P>Build it once.</P>
-      <P>Use it everywhere.</P>
-      <P>While important, reusability alone isn&apos;t enough.</P>
-      <P>Successful platforms provide:</P>
+      <Heading>Beyond Single Inference</Heading>
+      <P>Single model calls are often the first goal of AI systems.</P>
+      <P>Send a prompt.</P>
+      <P>Get a response.</P>
+      <P>While important, single inference alone isn&apos;t enough.</P>
+      <P>Successful AI platforms provide:</P>
       <Ul
         items={[
-          "Consistency",
-          "Reliability",
-          "Documentation",
-          "Discoverability",
-          "Governance",
+          "Consistent context management",
+          "Reliable tool execution",
+          "Structured output validation",
+          "Observability and tracing",
+          "Governance and access control",
         ]}
       />
       <P>
-        Teams should not only be able to use a platform—they should want to use
-        it.
+        Teams should not only be able to use the platform — they should want to
+        use it.
       </P>
-      <P>The best platforms make adoption feel natural.</P>
+      <P>The best AI platforms make building agents feel natural.</P>
 
       <Heading>Reducing Complexity at Scale</Heading>
-      <P>As organizations grow, complexity increases.</P>
-      <P>More teams.</P>
-      <P>More products.</P>
-      <P>More requirements.</P>
+      <P>As AI systems grow, complexity increases.</P>
+      <P>More agents.</P>
+      <P>More models.</P>
+      <P>More workflows.</P>
       <P>
         Without shared foundations, every team is forced to solve similar
-        problems independently.
+        orchestration problems independently.
       </P>
       <P>This often leads to:</P>
       <Ul
         items={[
-          "Duplicate implementations",
-          "Inconsistent user experiences",
-          "Increased maintenance costs",
-          "Slower development cycles",
+          "Duplicate prompt logic across codebases",
+          "Inconsistent model behaviors between products",
+          "Increased debugging costs when agents fail silently",
+          "Slower iteration cycles for new AI features",
         ]}
       />
       <P>
         Platforms help centralize common concerns so teams can focus on building
-        product value rather than rebuilding infrastructure.
+        agent value rather than rebuilding inference scaffolding.
       </P>
-      <P>A strong platform doesn&apos;t eliminate complexity.</P>
+      <P>A strong AI platform doesn&apos;t eliminate complexity.</P>
       <P>It absorbs complexity.</P>
 
-      <Heading>Platforms as Multipliers</Heading>
+      <Heading>Platforms as Force Multipliers</Heading>
       <P>
-        One of the most valuable characteristics of platform work is leverage.
+        One of the most powerful characteristics of platform work is leverage.
       </P>
-      <P>A feature may benefit thousands of users.</P>
+      <P>A single agent may complete thousands of tasks.</P>
       <P>
-        A platform improvement may benefit every engineer working on every
-        future feature.
+        A platform improvement may make every agent built on top of it more
+        capable.
       </P>
       <P>The impact compounds over time.</P>
       <P>
-        A well-designed component library can accelerate dozens of product
-        initiatives.
+        A well-designed tool registry can unlock dozens of new agent workflows.
       </P>
       <P>
-        An improved deployment workflow can save countless hours across
-        engineering teams.
+        A shared context window strategy can reduce costs across every model
+        call in production.
       </P>
       <P>
         A shared foundation creates value far beyond its original
@@ -358,231 +361,235 @@ const articleContent: Record<string, React.ReactNode> = {
       <P>Platform teams often focus on what they build.</P>
       <P>The more important question is whether anyone uses it.</P>
       <P>Adoption is the clearest signal of success.</P>
-      <P>Engineers naturally gravitate toward systems that are:</P>
+      <P>Engineers naturally gravitate toward AI platforms that are:</P>
       <Ul
         items={[
-          "Easy to understand",
+          "Easy to reason about",
           "Well documented",
-          "Reliable",
-          "Flexible",
-          "Consistent",
+          "Reliable under real workloads",
+          "Flexible enough to support diverse use cases",
+          "Consistent in their behavior",
         ]}
       />
       <P>
-        If teams continually work around a platform, the issue is rarely
+        If teams continually build around a platform, the issue is rarely
         adoption itself.
       </P>
       <P>
         It&apos;s usually a sign that the platform isn&apos;t solving the right
         problems.
       </P>
-      <P>The best platforms earn trust through usefulness.</P>
+      <P>The best AI platforms earn trust through reliability.</P>
 
       <Heading>Building for the Future</Heading>
       <P>
-        One of the unique challenges of platform work is balancing current needs
-        with future growth.
+        One of the unique challenges of AI platform work is balancing current
+        model capabilities with future model generations.
       </P>
-      <P>Build too narrowly and the platform becomes restrictive.</P>
-      <P>Build too broadly and it becomes unnecessarily complex.</P>
+      <P>Build too narrowly and the platform becomes model-specific.</P>
+      <P>Build too abstractly and it loses practical utility.</P>
       <P>
         Finding the right balance requires understanding not only today&apos;s
-        requirements, but also the direction of the organization.
+        requirements, but also the trajectory of the models and agents that will
+        run on top of it.
       </P>
-      <P>The goal isn&apos;t to predict the future perfectly.</P>
-      <P>It&apos;s to create foundations that can evolve alongside it.</P>
+      <P>The goal isn&apos;t to predict which model wins.</P>
+      <P>It&apos;s to create foundations that can evolve alongside any of them.</P>
 
       <Heading>Looking Ahead</Heading>
-      <P>Components solve immediate problems.</P>
+      <P>Model calls solve immediate problems.</P>
       <P>Platforms create long-term leverage.</P>
       <P>
         The transition from one to the other is rarely defined by a single
-        project. Instead, it happens gradually through thoughtful decisions,
-        shared standards, and a commitment to reducing friction for others.
+        project. Instead, it happens gradually through thoughtful abstractions,
+        shared conventions, and a commitment to reducing friction for every
+        agent that comes next.
       </P>
       <P>
-        The most effective engineering organizations don&apos;t just build
-        products.
+        The most effective AI organizations don&apos;t just deploy models.
       </P>
-      <P>They build the foundations that make great products possible.</P>
+      <P>They build the infrastructure that makes capable agents possible.</P>
       <P>That&apos;s where platforms begin.</P>
     </>
   ),
-  "designing-for-developer-experience": (
+  "designing-for-agent-experience": (
     <>
       <P>
         When teams discuss user experience, the conversation usually focuses on
-        customers.
+        humans.
       </P>
-      <P>How quickly can users complete a task?</P>
+      <P>How quickly can a user complete a task?</P>
       <P>How intuitive is the interface?</P>
       <P>How accessible is the product?</P>
       <P>
-        These are important questions, but there&apos;s another experience that
-        often has a significant impact on product quality: developer experience.
+        These are important questions, but there&apos;s another consumer that
+        often has a significant impact on product quality: the agent.
       </P>
       <P>
-        The tools, systems, and workflows engineers use every day shape how
-        quickly teams can deliver value. They influence code quality,
-        consistency, maintainability, and even employee satisfaction.
+        The APIs, schemas, and prompts that models interact with every day shape
+        how reliably agents can deliver value. They influence accuracy,
+        consistency, error rates, and the cost of every inference call.
       </P>
       <P>
-        A thoughtful developer experience doesn&apos;t just make engineers
-        happier. It makes products better.
+        A thoughtful agent experience doesn&apos;t just make models more
+        capable. It makes the systems they power more reliable.
       </P>
 
-      <Heading>Developer Experience Is Product Design</Heading>
-      <P>Developer experience is often associated with tooling.</P>
-      <P>Build systems.</P>
-      <P>CI pipelines.</P>
-      <P>Component libraries.</P>
-      <P>Documentation.</P>
+      <Heading>Agent Experience Is Product Design</Heading>
+      <P>Agent experience is often associated with prompt engineering.</P>
+      <P>System prompts.</P>
+      <P>Tool definitions.</P>
+      <P>Few-shot examples.</P>
+      <P>Output parsers.</P>
       <P>
-        While these are important, developer experience is ultimately a design
-        problem.
+        While these matter, agent experience is ultimately a design problem.
       </P>
-      <P>Every workflow has users.</P>
-      <P>Every API has consumers.</P>
-      <P>Every component library has an audience.</P>
+      <P>Every tool has a model invoking it.</P>
+      <P>Every API has an agent consuming it.</P>
+      <P>Every schema has a model interpreting it.</P>
       <P>
-        The same principles that create great customer experiences can be
-        applied to internal engineering systems.
+        The same principles that create great human interfaces can be applied to
+        the systems agents operate within.
       </P>
-      <P>Clear interfaces. Consistent patterns. Predictable behavior.</P>
-      <P>The goal is to make the right path the easiest path.</P>
+      <P>Clear contracts. Consistent patterns. Predictable behavior.</P>
+      <P>The goal is to make the correct action the most natural action.</P>
 
-      <Heading>Reducing Friction</Heading>
-      <P>Small sources of friction add up quickly.</P>
-      <P>A confusing component API.</P>
-      <P>Missing documentation.</P>
-      <P>Inconsistent patterns.</P>
-      <P>Slow build times.</P>
+      <Heading>Reducing Ambiguity</Heading>
+      <P>Small sources of ambiguity compound quickly in agentic systems.</P>
+      <P>An underspecified tool description.</P>
+      <P>Inconsistent field names across similar schemas.</P>
+      <P>Vague error messages.</P>
+      <P>Missing examples in context.</P>
       <P>
         Individually, these problems may seem minor. Collectively, they create a
-        constant tax on development.
+        constant source of model uncertainty.
       </P>
       <P>
-        Over time, teams spend more energy navigating complexity than solving
-        customer problems.
+        Over time, agents spend more tokens resolving ambiguity than executing
+        meaningful work.
       </P>
       <P>
-        Improving developer experience often means removing unnecessary
-        decisions.
+        Improving agent experience often means removing unnecessary
+        interpretive load.
       </P>
       <P>
-        When systems are intuitive, engineers can focus on building instead of
-        figuring out how to build.
+        When systems are unambiguous, agents can focus on reasoning instead of
+        guessing.
       </P>
 
-      <Heading>The Value of Shared Foundations</Heading>
+      <Heading>The Value of Shared Context</Heading>
       <P>
-        Many developer experience improvements come from investing in shared
-        foundations.
+        Many agent experience improvements come from investing in shared
+        context infrastructure.
       </P>
       <P>Examples include:</P>
       <Ul
         items={[
-          "Design systems",
-          "Reusable component libraries",
-          "Consistent coding standards",
-          "Automated testing",
-          "Documentation",
-          "Development tooling",
+          "Canonical system prompt templates",
+          "Shared tool registries with consistent schemas",
+          "Structured output formats with validation",
+          "Standardized error envelopes",
+          "Retrieval-augmented context pipelines",
+          "Prompt versioning and evaluation frameworks",
         ]}
       />
       <P>
-        These investments rarely produce immediate customer-facing features.
+        These investments rarely produce immediate product-facing features.
       </P>
       <P>However, they create leverage.</P>
       <P>
-        A small improvement made once can benefit every engineer and every
-        future project.
+        A single improvement to how context is structured can reduce error rates
+        across every agent that relies on it.
       </P>
-      <P>The impact compounds over time.</P>
+      <P>The impact compounds with every model call.</P>
 
-      <Heading>Documentation Is a Feature</Heading>
+      <Heading>Documentation the Model Can Use</Heading>
       <P>Documentation is often treated as an afterthought.</P>
       <P>
-        In reality, it is one of the most important parts of any developer
-        experience.
+        In agentic systems, it is one of the most important parts of the
+        experience — because the model reads it at inference time.
       </P>
-      <P>Good documentation reduces uncertainty.</P>
-      <P>It helps engineers make decisions confidently.</P>
+      <P>Good tool descriptions reduce hallucination.</P>
+      <P>They help agents select the right tool for the right task.</P>
       <P>
-        It accelerates onboarding and improves adoption of shared systems.
-      </P>
-      <P>
-        Most importantly, it allows knowledge to scale beyond the individuals
-        who originally built the system.
+        They accelerate reliable behavior and reduce the need for complex
+        prompt scaffolding.
       </P>
       <P>
-        A great component with poor documentation often feels unusable.
+        Most importantly, they allow agent capability to scale without
+        proportional prompt engineering effort.
       </P>
       <P>
-        A good component with excellent documentation can become indispensable.
+        A powerful tool with a poor description often gets misused or ignored.
+      </P>
+      <P>
+        A simpler tool with an excellent description can become the foundation
+        of reliable workflows.
       </P>
 
-      <Heading>Automation Creates Momentum</Heading>
-      <P>The best developer experiences remove repetitive work.</P>
+      <Heading>Structured Outputs Create Momentum</Heading>
+      <P>The best agent experiences remove interpretive uncertainty.</P>
       <P>
-        Automation allows teams to spend less time on manual processes and more
-        time solving meaningful problems.
+        Structured outputs allow downstream systems to process model responses
+        reliably, without fragile parsing logic.
       </P>
       <P>This can take many forms:</P>
       <Ul
         items={[
-          "Automated testing",
-          "Code generation",
-          "Continuous integration",
-          "Linting and formatting",
-          "Deployment pipelines",
+          "JSON schema-constrained generation",
+          "Typed function call responses",
+          "Validated output envelopes",
+          "Canonical state representations",
+          "Deterministic tool return formats",
         ]}
       />
-      <P>The goal is not automation for its own sake.</P>
-      <P>The goal is creating momentum.</P>
+      <P>The goal is not structure for its own sake.</P>
+      <P>The goal is creating momentum through predictability.</P>
       <P>
-        Every task that happens automatically is one less task competing for an
-        engineer&apos;s attention.
+        Every response that arrives in a known format is one less source of
+        downstream fragility.
       </P>
 
-      <Heading>Building for Future Teams</Heading>
+      <Heading>Building for Future Agents</Heading>
       <P>
-        One of the most overlooked aspects of developer experience is that the
-        primary beneficiaries are often future engineers.
+        One of the most overlooked aspects of agent experience is that the
+        primary beneficiaries are often future models.
       </P>
-      <P>The engineer joining six months from now.</P>
-      <P>The teammate maintaining a feature two years later.</P>
+      <P>The next-generation model that inherits your tool definitions.</P>
+      <P>The new agent built on top of the same context pipeline.</P>
       <P>
-        The developer trying to understand a decision they weren&apos;t involved
-        in making.
+        The workflow trying to compose capabilities that weren&apos;t designed
+        to work together.
       </P>
       <P>
-        Thoughtful systems create clarity long after the original implementation
-        is complete.
+        Thoughtful systems create reliability long after the original
+        implementation is complete.
       </P>
-      <P>Good developer experience is an investment in future productivity.</P>
+      <P>
+        Good agent experience is an investment in future model performance.
+      </P>
 
       <Heading>Looking Ahead</Heading>
-      <P>Products evolve quickly.</P>
-      <P>Teams grow.</P>
-      <P>Requirements change.</P>
+      <P>Models evolve quickly.</P>
+      <P>Capabilities expand.</P>
+      <P>Expectations grow.</P>
       <P>
-        The engineering organizations that scale most effectively are often the
-        ones that treat developer experience as a first-class concern.
+        The AI organizations that scale most effectively are often the ones that
+        treat agent experience as a first-class concern — not an afterthought
+        addressed through increasingly complex prompts.
       </P>
       <P>
-        When engineers can move quickly with confidence, everyone benefits.
+        When agents can act correctly with confidence, everyone benefits.
       </P>
-      <P>Teams collaborate more effectively.</P>
-      <P>Products become more consistent.</P>
-      <P>Customers receive better experiences.</P>
+      <P>Products become more reliable.</P>
+      <P>Costs decrease.</P>
+      <P>Users receive better outcomes.</P>
       <P>
-        Developer experience is ultimately about removing friction between an
-        idea and its implementation.
+        Agent experience is ultimately about removing friction between a model
+        and a correct action.
       </P>
       <P>
-        The easier it is to build the right thing, the more likely great
-        products are to emerge.
+        The clearer the path, the more capable the agents that walk it.
       </P>
     </>
   ),
@@ -629,7 +636,7 @@ export default async function BlogPostPage({
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(8,13,26,0.2) 40%, rgba(8,13,26,1) 100%)",
+              "linear-gradient(to bottom, rgba(5,5,7,0.3) 0%, rgba(5,5,7,0.0) 20%, rgba(5,5,7,0.4) 50%, rgba(5,5,7,0.9) 75%, rgba(5,5,7,1) 88%)",
           }}
         />
       </Box>

@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import skyBg from "../images/sky-bg.png";
+import skyBg from "../images/hero-bg.png";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(32px); filter: blur(6px); }
@@ -21,6 +21,7 @@ const anim = (delay: string) => ({
 
 const NEUTRAL =
   "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 0%, rgba(8,13,26,0.4) 100%)";
+
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ export default function Hero() {
       if (!sectionRef.current || !bgRef.current) return;
       const progress = Math.min(window.scrollY / sectionRef.current.offsetHeight, 1);
       bgRef.current.style.transform = `scale(${1 + progress * 0.08})`;
-      bgRef.current.style.opacity = String(1 - progress * 0.4);
+      bgRef.current.style.opacity = String((1 - progress * 0.4) * 0.9);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -77,19 +78,19 @@ export default function Hero() {
           backgroundPosition: { xs: "center", md: "center" },
           willChange: "transform, opacity",
           transformOrigin: "center center",
-          opacity: 0.55,
+          opacity: 0.9,
         }}
       />
 
-      {/* Dark gradient — left-heavy on desktop so text stays legible */}
+      {/* Dark gradient — left-heavy so text stays legible, eclipse visible on right */}
       <Box
         aria-hidden
         sx={{
           position: "absolute",
           inset: 0,
           background: {
-            xs: "linear-gradient(180deg, rgba(8,13,26,0.75) 0%, rgba(8,13,26,0.55) 50%, rgba(8,13,26,0.80) 100%)",
-            md: "linear-gradient(90deg, rgba(8,13,26,0.82) 0%, rgba(8,13,26,0.65) 38%, rgba(8,13,26,0.35) 65%, rgba(8,13,26,0.10) 100%)",
+            xs: "linear-gradient(180deg, rgba(8,13,26,0.80) 0%, rgba(8,13,26,0.60) 50%, rgba(8,13,26,0.85) 100%)",
+            md: "linear-gradient(90deg, rgba(8,13,26,0.92) 0%, rgba(8,13,26,0.80) 30%, rgba(8,13,26,0.35) 60%, rgba(8,13,26,0.05) 100%)",
           },
         }}
       />
@@ -109,82 +110,94 @@ export default function Hero() {
       />
 
       <Container sx={{ position: "relative", zIndex: 2, py: { xs: 12, md: 10 } }}>
-        <Box sx={{ maxWidth: { xs: "100%", md: 620 } }}>
+        <Box sx={{ maxWidth: { xs: "100%", md: 560 } }}>
           {/* Eyebrow */}
           <Typography
             sx={{
               ...anim("0.4s"),
               color: "primary.light",
               fontWeight: 600,
-              fontSize: { xs: 12, md: 13 },
+              fontSize: { xs: 11, md: 12 },
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              mb: { xs: 2.5, md: 4 },
+              mb: 1.5,
             }}
           >
-            + Hello, I&apos;m Alex Parker
+            Hello, I&apos;m Alex Parker
           </Typography>
+
+          {/* Accent rule — between eyebrow and headline */}
+          <Box
+            sx={{
+              ...anim("0.55s"),
+              width: 48,
+              height: 2,
+              borderRadius: 2,
+              bgcolor: "secondary.main",
+              mb: { xs: 3, md: 4 },
+            }}
+          />
 
           {/* Headline */}
           <Typography
             variant="h1"
             sx={{
               ...anim("0.7s"),
-              fontSize: { xs: "42px", sm: "60px", md: "80px" },
-              lineHeight: 1.02,
+              fontSize: { xs: "40px", sm: "56px", md: "72px" },
+              lineHeight: 1.05,
               color: "common.white",
               mb: { xs: 3, md: 4 },
             }}
           >
-            Senior Software
+            Building intelligent
             <br />
-            Engineer
+            systems that{" "}
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              matter.
+            </Box>
           </Typography>
-
-          {/* Accent rule */}
-          <Box
-            sx={{
-              ...anim("1.0s"),
-              width: 64,
-              height: 3,
-              borderRadius: 2,
-              bgcolor: "primary.main",
-              mb: { xs: 3, md: 4 },
-            }}
-          />
 
           {/* Intro */}
           <Typography
             sx={{
-              ...anim("1.25s"),
+              ...anim("1.0s"),
               color: "grey.300",
-              fontSize: { xs: 16, md: 18 },
+              fontSize: { xs: 15, md: 17 },
               lineHeight: 1.65,
-              maxWidth: 480,
+              maxWidth: 460,
               mb: { xs: 4, md: 5 },
             }}
           >
-            I build thoughtful, accessible, and performant web experiences
-            with a focus on design systems, developer experience, and clean
-            code.
+            AI engineer and builder focused on creating intelligent systems that
+            learn, adapt, and deliver real impact.
           </Typography>
 
           {/* CTAs */}
           <Box
             sx={{
-              ...anim("1.5s"),
+              ...anim("1.25s"),
               display: "flex",
               flexWrap: "wrap",
               alignItems: "center",
-              gap: { xs: 2.5, md: 4 },
+              gap: { xs: 3, md: 4 },
             }}
           >
             <Button
+              variant="outlined"
               href="#experience"
               sx={{
-                fontSize: { xs: 15, md: 16 },
-                px: 3.5,
+                fontSize: { xs: 12, md: 13 },
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                px: 3,
                 py: 1.4,
+                borderColor: "rgba(255,255,255,0.55)",
+                color: "common.white",
+                "&:hover": {
+                  borderColor: "common.white",
+                  backgroundColor: "rgba(255,255,255,0.06)",
+                },
                 "& .arrow": { ml: 1.5, transition: "transform 0.3s" },
                 "&:hover .arrow": { transform: "translateX(4px)" },
               }}
@@ -197,16 +210,17 @@ export default function Hero() {
 
             <Box
               component="a"
-              href="#contact"
+              href="#about"
               sx={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 1,
                 color: "grey.200",
-                fontSize: { xs: 15, md: 16 },
-                fontWeight: 500,
+                fontSize: { xs: 12, md: 13 },
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
                 borderBottom: "1px solid",
-                borderColor: "grey.500",
+                borderColor: "rgba(200,184,237,0.45)",
                 pb: "3px",
                 transition: "color 0.3s, border-color 0.3s",
                 textDecoration: "none",
@@ -216,19 +230,12 @@ export default function Hero() {
                 },
               }}
             >
-              Contact Me
-              <Box
-                component="svg"
-                aria-hidden
-                sx={{ width: 16, height: 16, fill: "currentColor", flexShrink: 0 }}
-                viewBox="0 0 24 24"
-              >
-                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
-              </Box>
+              About Me
             </Box>
           </Box>
         </Box>
       </Container>
+
     </Box>
   );
 }

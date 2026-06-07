@@ -51,7 +51,7 @@ export default function Experience() {
               py: 1,
               mb: 5,
               borderLeft: "2px solid",
-              borderColor: "rgba(59,130,246,0.30)",
+              borderColor: "rgba(199,154,99,0.40)",
             }}
           >
             <Typography

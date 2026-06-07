@@ -19,7 +19,7 @@ const BotanicalSprig = ({
     style={style}
     viewBox="0 0 60 220"
     fill="none"
-    stroke="rgba(125,211,252,0.45)"
+    stroke="rgba(168,146,216,0.40)"
     strokeWidth={1.1}
     strokeLinecap="round"
     aria-hidden
@@ -30,7 +30,7 @@ const BotanicalSprig = ({
     <path d="M30 128 C 16 120, 10 128, 8 140" />
     {[40, 52, 64, 76, 88, 100].map((y, i) => (
       <g key={y} transform={`translate(0 ${y})`}>
-        <circle cx={30} cy={0} r={i < 2 ? 2.6 : 2.2} fill="rgba(125,211,252,0.28)" />
+        <circle cx={30} cy={0} r={i < 2 ? 2.6 : 2.2} fill="rgba(168,146,216,0.25)" />
         <line x1={30} y1={-3} x2={24} y2={-7} />
         <line x1={30} y1={-3} x2={36} y2={-7} />
       </g>
@@ -63,9 +63,9 @@ const GradientAura = () => {
   return (
     <div className="ambient-layer" aria-hidden>
       <div ref={ref} style={{ position: "absolute", inset: 0, willChange: "transform" }}>
-        <div className="ambient-aura plum" />
-        <div className="ambient-aura olive" />
-        <div className="ambient-aura plum-deep" />
+        <div className="ambient-aura violet" />
+        <div className="ambient-aura violet-muted" />
+        <div className="ambient-aura violet-deep" />
         <BotanicalSprig
           className="sway"
           style={{ position: "absolute", bottom: -10, left: "3vw", width: 90, height: 240, opacity: 0.12 }}
@@ -142,7 +142,7 @@ const ParticleField = () => {
         }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(210,220,235,0.55)";
+        ctx.fillStyle = "rgba(200,184,237,0.50)";
         ctx.fill();
         for (let j = i + 1; j < particles.length; j++) {
           const q = particles[j];
@@ -153,7 +153,7 @@ const ParticleField = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(180,200,225,${(1 - dist / LINK_DIST) * 0.11})`;
+            ctx.strokeStyle = `rgba(168,146,216,${(1 - dist / LINK_DIST) * 0.12})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }

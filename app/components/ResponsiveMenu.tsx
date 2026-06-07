@@ -48,7 +48,7 @@ export default function ResponsiveMenu() {
                 slotProps={{
                   primary: {
                     sx: {
-                      fontFamily: "var(--font-space-grotesk), sans-serif",
+                      fontFamily: "var(--font-cormorant-garamond), serif",
                       fontWeight: 600,
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
@@ -71,7 +71,7 @@ export default function ResponsiveMenu() {
         elevation={0}
         position="fixed"
         sx={{
-          backgroundColor: "rgba(8,13,26,0.60)",
+          backgroundColor: "rgba(5,5,7,0.70)",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
@@ -125,7 +125,13 @@ export default function ResponsiveMenu() {
             <Button
               href="/#contact"
               variant="contained"
-              sx={{ ml: 1.5, px: 2.5, fontSize: 14 }}
+              sx={{
+                ml: 1.5,
+                px: 2.5,
+                fontSize: 14,
+                bgcolor: "#7B5DB8",
+                "&:hover": { bgcolor: "#8B6FC4" },
+              }}
             >
               Contact Me
             </Button>

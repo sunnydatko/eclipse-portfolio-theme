@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="app/favicon.png" alt="Orion" width="64" height="64" />
+  <img src="app/favicon.png" alt="Eclipse" width="64" height="64" />
 
-  # Orion
+  # Eclipse
 
   **A space-dark, minimal portfolio template for engineers, designers, and creators.**
 
@@ -18,13 +18,13 @@
 
 ## Preview
 
-![Orion preview](public/screenshot.png)
+![Eclipse preview](public/screenshot.png)
 
 ---
 
 ## Design
 
-Orion draws its palette and mood from deep space — near-black backgrounds, cold blue-white accents, and a density that rewards attention without demanding it. The aesthetic is intentional:
+Eclipse draws its palette and mood from deep space — near-black backgrounds, cold blue-white accents, and a density that rewards attention without demanding it. The aesthetic is intentional:
 
 - **Space-dark color palette** — rich near-black backgrounds offset by cool neutrals and precise accent hues that read like distant starlight
 - **Ambient background** — a slow, living backdrop that shifts like light refracting through atmosphere

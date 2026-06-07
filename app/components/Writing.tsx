@@ -73,13 +73,13 @@ export default function Writing() {
                   left: 0,
                   right: 0,
                   height: "2px",
-                  backgroundColor: "#3B82F6",
+                  backgroundColor: "#7B5DB8",
                   transform: "scaleX(0)",
                   transformOrigin: "left",
                   transition: "transform 0.35s ease",
                 },
                 "&:hover": {
-                  borderColor: "rgba(59,130,246,0.20)",
+                  borderColor: "rgba(123,93,184,0.25)",
                   "&::after": { transform: "scaleX(1)" },
                   "& img": { transform: "scale(1.08)" },
                 },
@@ -125,7 +125,7 @@ export default function Writing() {
                   <Typography
                     aria-hidden
                     sx={{
-                      fontFamily: "var(--font-space-grotesk), sans-serif",
+                      fontFamily: "var(--font-cormorant-garamond), serif",
                       fontWeight: 700,
                       fontSize: { xs: 24, md: 30 },
                       color: "rgba(255,255,255,0.10)",

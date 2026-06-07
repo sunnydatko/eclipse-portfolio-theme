@@ -37,7 +37,7 @@ export default function Testimonial() {
             width: { xs: "120%", md: "900px" },
             height: { xs: "120%", md: "600px" },
             background:
-              "radial-gradient(circle, rgba(80,130,255,.12), transparent 70%)",
+              "radial-gradient(circle, rgba(123,93,184,0.14), transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -102,7 +102,7 @@ export default function Testimonial() {
                 height: 100,
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "2px solid rgba(59,130,246,0.35)",
+                border: "2px solid rgba(123,93,184,0.45)",
                 flexShrink: 0,
                 position: "relative",
               }}
