@@ -610,6 +610,8 @@ export default async function BlogPostPage({
           position: "relative",
           width: "100%",
           height: { xs: 280, sm: 380, md: 500 },
+          overflow: "hidden",
+          "&:hover img": { transform: "scale(1.08)" },
         }}
       >
         <Image
@@ -617,7 +619,7 @@ export default async function BlogPostPage({
           alt={post.title}
           fill
           priority
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
           sizes="100vw"
         />
         {/* Gradient fades image into page background */}

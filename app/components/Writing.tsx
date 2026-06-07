@@ -65,8 +65,7 @@ export default function Writing() {
                 backgroundColor: "background.paper",
                 textDecoration: "none",
                 position: "relative",
-                transition:
-                  "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                transition: "border-color 0.3s ease",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -80,10 +79,9 @@ export default function Writing() {
                   transition: "transform 0.35s ease",
                 },
                 "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
                   borderColor: "rgba(59,130,246,0.20)",
                   "&::after": { transform: "scaleX(1)" },
+                  "& img": { transform: "scale(1.08)" },
                 },
               }}
             >
@@ -104,6 +102,7 @@ export default function Writing() {
                   style={{
                     objectFit: "cover",
                     filter: "brightness(1.15) contrast(1.05)",
+                    transition: "transform 0.5s ease",
                   }}
                   sizes="(max-width: 900px) 100vw, 44vw"
                 />
