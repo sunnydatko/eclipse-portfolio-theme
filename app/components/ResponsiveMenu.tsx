@@ -124,13 +124,12 @@ export default function ResponsiveMenu() {
             ))}
             <Button
               href="/#contact"
-              variant="contained"
+              variant="outlined"
               sx={{
                 ml: 1.5,
                 px: 2.5,
-                fontSize: 14,
-                bgcolor: "#7B5DB8",
-                "&:hover": { bgcolor: "#8B6FC4" },
+                py: 1.25,
+                borderColor: "rgba(180,140,255,0.45)",
               }}
             >
               Contact Me
