@@ -84,11 +84,7 @@ export default function About() {
             mb: 0,
           }}
         >
-          I spent over a decade in the benefits technology space — navigating complex implementations, building client configurations from the ground up, and earning a reputation for never settling for surface-level solutions. In 2022, I made my technical curiosity official, enrolling in Western Governors University&apos;s Computer Science program and graduating in April 2026, all while working full-time. I bring something rare to software engineering: years of real-world problem-solving experience alongside fresh CS fundamentals, and an eye for crafting solutions that are both clean and{" "}
-          <Box component="span" sx={{ color: "primary.light", fontStyle: "italic" }}>
-            beautifully
-          </Box>{" "}
-          built.
+          I spent over a decade in the benefits technology space — navigating complex implementations, building client configurations from the ground up, and earning a reputation for never settling for surface-level solutions. In 2022, I made my technical curiosity official, enrolling in Western Governors University&apos;s Computer Science program and graduating in April 2026, adding rigorous CS fundamentals to my decade of real-world problem-solving.
         </Typography>
       </Container>
     </Box>
