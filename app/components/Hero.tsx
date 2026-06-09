@@ -144,26 +144,30 @@ export default function Hero() {
               fontWeight: 700,
             }}
           >
-            I build
+            Building software
             <br />
-            things that
+            with equal parts
             <br />
-            work{" "}
+            <Box component="span" sx={{ color: "primary.light" }}>
+              logic
+            </Box>
+            {" "}and{" "}
             <Box
               component="span"
               sx={{
                 fontStyle: "italic",
                 fontWeight: 500,
-                color: "primary.light",
+                color: "secondary.light",
               }}
             >
-              beautifully
+              magic.
             </Box>
+            {" "}
             <Box
               component="span"
               sx={{
                 display: "inline-block",
-                ml: { xs: "6px", md: "10px" },
+                ml: { xs: "2px", md: "4px" },
                 fontSize: { xs: "26px", sm: "36px", md: "46px" },
                 color: "secondary.light",
                 verticalAlign: "middle",
@@ -188,12 +192,8 @@ export default function Hero() {
               mb: { xs: 4, md: 5 },
             }}
           >
-            Software engineer crafting clean, scalable
-            <br />
-            solutions with a touch of{" "}
-            <Box component="span" sx={{ color: "primary.light" }}>
-              magic.
-            </Box>
+            Junior Software Engineer passionate about turning complex problems
+            into elegant, user-friendly solutions that make a real impact.
           </Typography>
 
           {/* CTAs */}
