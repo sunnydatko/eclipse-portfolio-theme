@@ -7,9 +7,11 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { testimonials } from "../helpers/config";
 import graceAvatar from "../images/grace.jpg";
+import danielleAvatar from "../images/danielle.png";
 
 const imageMap: Record<string, StaticImageData> = {
   "grace": graceAvatar,
+  "danielle": danielleAvatar,
 };
 
 export default function Testimonial() {

@@ -86,7 +86,7 @@ export const testimonials = [
       "Genivere demonstrated persistence and consistency throughout her coursework, balancing full-time work while completing a rigorous CS degree — a truly remarkable feat. She does not settle for surface-level concepts, frequently seeking outside resources for deeper understanding and exhibiting advanced analytical ability. Any organization will find her to be a tremendous asset.",
     name: "Danielle Zeedick, Ed.D.",
     title: "Cybersecurity Faculty & Mentor",
-    image: "grace",
+    image: "danielle",
   },
 ];
 
