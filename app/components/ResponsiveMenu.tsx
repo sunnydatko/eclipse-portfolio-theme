@@ -21,7 +21,6 @@ const drawerWidth = 320;
 const navItems = [
   { name: "About", href: "/#about" },
   { name: "Experience", href: "/#experience" },
-  { name: "Blog", href: "/#blog" },
 ];
 
 export default function ResponsiveMenu() {
@@ -115,7 +114,7 @@ export default function ResponsiveMenu() {
                   fontSize: 14,
                   letterSpacing: "0.04em",
                   px: 2,
-                  "&:hover": { color: "common.white", backgroundColor: "transparent" },
+                  "&:hover": { color: "info.light", backgroundColor: "transparent" },
                 }}
                 variant="text"
               >

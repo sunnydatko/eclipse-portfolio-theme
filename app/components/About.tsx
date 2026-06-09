@@ -6,12 +6,13 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 const skills = [
-  "LLMs",
-  "AI Agents",
-  "RAG",
   "Python",
-  "TypeScript",
-  "System Design",
+  "HTML & CSS",
+  "Git",
+  "GitHub",
+  "Linux",
+  "Flask",
+  "ITIL®",
 ];
 
 export default function About() {
@@ -21,7 +22,6 @@ export default function About() {
       id="about"
       sx={{
         py: { xs: 10, md: 14 },
-        borderTop: "1px solid rgba(255,255,255,0.06)",
         position: "relative",
         zIndex: 1,
       }}
@@ -49,8 +49,13 @@ export default function About() {
           + About Me
         </Typography>
 
-        <Typography className="reveal" style={{ transitionDelay: "0.1s" }} variant="h3" sx={{ mb: 4 }}>
-          Engineering intelligent systems at the frontier of what&apos;s possible
+        <Typography
+          className="reveal"
+          style={{ transitionDelay: "0.1s" }}
+          variant="h3"
+          sx={{ mb: 4 }}
+        >
+          Detail-oriented, endlessly curious, and always building.
         </Typography>
 
         <Box
@@ -79,7 +84,11 @@ export default function About() {
             mb: 0,
           }}
         >
-          I&apos;m an AI engineer focused on designing and building intelligent systems — from multi-agent pipelines and RAG architectures to production LLM integrations that deliver real business value. I work at the intersection of model capability and systems design, turning complex AI research into reliable, scalable infrastructure that teams can build on.
+          I spent over a decade in the benefits technology space — navigating complex implementations, building client configurations from the ground up, and earning a reputation for never settling for surface-level solutions. In 2022, I made my technical curiosity official, enrolling in Western Governors University&apos;s Computer Science program and graduating in April 2026, all while working full-time. I bring something rare to software engineering: years of real-world problem-solving experience alongside fresh CS fundamentals, and an eye for crafting solutions that are both clean and{" "}
+          <Box component="span" sx={{ color: "primary.light", fontStyle: "italic" }}>
+            beautifully
+          </Box>{" "}
+          built.
         </Typography>
       </Container>
     </Box>

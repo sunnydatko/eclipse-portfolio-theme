@@ -66,6 +66,8 @@ const GradientAura = () => {
         <div className="ambient-aura violet" />
         <div className="ambient-aura violet-muted" />
         <div className="ambient-aura violet-deep" />
+        <div className="ambient-aura amber" />
+        <div className="ambient-aura cyan" />
         <BotanicalSprig
           className="sway"
           style={{ position: "absolute", bottom: -10, left: "3vw", width: 90, height: 240, opacity: 0.12 }}
@@ -87,8 +89,15 @@ const GradientAura = () => {
   );
 };
 
-/* Floating particles + constellation lines (canvas) ---------------------- */
-type Particle = { x: number; y: number; vx: number; vy: number; r: number };
+/* Firefly field (canvas) ------------------------------------------------- */
+type Firefly = {
+  x: number; y: number;
+  vx: number; vy: number;
+  r: number;
+  phase: number;   // pulse phase offset
+  speed: number;   // pulse speed
+  type: "warm" | "cool" | "blue";   // amber / lavender / teal
+};
 
 const ParticleField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -102,13 +111,13 @@ const ParticleField = () => {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let width = 0;
     let height = 0;
-    let particles: Particle[] = [];
+    let flies: Firefly[] = [];
     let raf = 0;
-    const LINK_DIST = 110;
+    let frame = 0;
 
     const count = () => {
-      const base = Math.round((window.innerWidth * window.innerHeight) / 20000);
-      return Math.max(30, Math.min(70, base));
+      const base = Math.round((window.innerWidth * window.innerHeight) / 40000);
+      return Math.max(18, Math.min(38, base));
     };
 
     const init = () => {
@@ -119,46 +128,62 @@ const ParticleField = () => {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      particles = Array.from({ length: count() }, () => ({
+      flies = Array.from({ length: count() }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
-        r: Math.random() * 1.2 + 0.5,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.14,
+        r: Math.random() * 1.4 + 1.2,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.012 + 0.006,
+        type: Math.random() < 0.25 ? "warm" : Math.random() < 0.2 ? "blue" : "cool",
       }));
     };
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
+      for (const f of flies) {
         if (!reduced) {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < -20) p.x = width + 20;
-          if (p.x > width + 20) p.x = -20;
-          if (p.y < -20) p.y = height + 20;
-          if (p.y > height + 20) p.y = -20;
+          f.x += f.vx;
+          f.y += f.vy;
+          if (f.x < -30) f.x = width + 30;
+          if (f.x > width + 30) f.x = -30;
+          if (f.y < -30) f.y = height + 30;
+          if (f.y > height + 30) f.y = -30;
+          f.phase += f.speed;
+        }
+        const pulse = (Math.sin(f.phase) + 1) / 2;        // 0..1
+        const alpha = 0.06 + pulse * 0.14;
+        const glowR = f.r * (1.2 + pulse * 0.6);
+
+        // soft outer glow
+        const grad = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, glowR * 3.5);
+        if (f.type === "warm") {
+          grad.addColorStop(0, `rgba(232,196,140,${(alpha * 0.7).toFixed(3)})`);
+          grad.addColorStop(1, "rgba(232,196,140,0)");
+        } else if (f.type === "blue") {
+          grad.addColorStop(0, `rgba(74,155,232,${(alpha * 0.65).toFixed(3)})`);
+          grad.addColorStop(1, "rgba(74,155,232,0)");
+        } else {
+          grad.addColorStop(0, `rgba(200,184,237,${(alpha * 0.6).toFixed(3)})`);
+          grad.addColorStop(1, "rgba(187,168,226,0)");
         }
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(200,184,237,0.50)";
+        ctx.arc(f.x, f.y, glowR * 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
         ctx.fill();
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j];
-          const dx = p.x - q.x;
-          const dy = p.y - q.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < LINK_DIST) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(168,146,216,${(1 - dist / LINK_DIST) * 0.12})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
+
+        // bright core
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        ctx.fillStyle = f.type === "warm"
+          ? `rgba(245,218,168,${alpha.toFixed(3)})`
+          : f.type === "blue"
+          ? `rgba(100,180,240,${alpha.toFixed(3)})`
+          : `rgba(220,210,245,${alpha.toFixed(3)})`;
+        ctx.fill();
       }
+      frame++;
     };
 
     const loop = () => {
@@ -184,6 +209,51 @@ const ParticleField = () => {
   }, []);
 
   return <canvas ref={canvasRef} className="ambient-particles" aria-hidden />;
+};
+
+/* Cursor sparkle trail --------------------------------------------------- */
+const SPARKLE_CHARS = ["✦", "✦", "·", "∗"];
+
+const CursorSparkle = () => {
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (prefersReducedMotion()) return;
+
+    let lastSpawn = 0;
+
+    const onMove = (e: MouseEvent) => {
+      const now = Date.now();
+      if (now - lastSpawn < 160) return;
+      lastSpawn = now;
+
+      const el = document.createElement("span");
+      el.textContent = SPARKLE_CHARS[Math.floor(Math.random() * SPARKLE_CHARS.length)];
+      const size = Math.random() * 4 + 6;
+      const offsetX = (Math.random() - 0.5) * 14;
+      const duration = (Math.random() * 0.2 + 0.5).toFixed(2);
+      const color = Math.random() > 0.75
+        ? "rgba(232,196,140,0.45)"
+        : "rgba(187,168,226,0.55)";
+      el.style.cssText = [
+        "position:fixed",
+        `left:${e.clientX + offsetX}px`,
+        `top:${e.clientY}px`,
+        `font-size:${size}px`,
+        `color:${color}`,
+        "pointer-events:none",
+        "user-select:none",
+        "z-index:9998",
+        `animation:cursorSparkleRise ${duration}s ease-out forwards`,
+      ].join(";");
+      document.body.appendChild(el);
+      el.addEventListener("animationend", () => el.remove(), { once: true });
+    };
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return null;
 };
 
 /* Cursor glow ------------------------------------------------------------ */
@@ -277,6 +347,7 @@ export default function Ambient() {
       <GradientAura />
       <ParticleField />
       <CursorGlow />
+      <CursorSparkle />
       <div className="ambient-noise" aria-hidden />
       <ScrollReveal />
     </>

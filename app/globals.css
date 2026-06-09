@@ -30,7 +30,7 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.5;
+  opacity: 0.32;
   will-change: transform;
 }
 
@@ -63,14 +63,40 @@ body {
 .ambient-aura.violet-deep {
   width: 34vw;
   height: 34vw;
-  top: 40%;
+  top: 10%;
   left: 55%;
   background: radial-gradient(
     circle at center,
-    rgba(72, 28, 140, 0.38),
+    rgba(72, 28, 140, 0.25),
     rgba(72, 28, 140, 0) 70%
   );
   animation: auraDriftC 38s ease-in-out infinite alternate;
+}
+
+.ambient-aura.amber {
+  width: 52vw;
+  height: 52vw;
+  top: 52%;
+  left: 18%;
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 144, 94, 0.13),
+    rgba(200, 144, 94, 0) 70%
+  );
+  animation: auraDriftD 30s ease-in-out infinite alternate;
+}
+
+.ambient-aura.cyan {
+  width: 36vw;
+  height: 36vw;
+  top: 30%;
+  right: -6vw;
+  background: radial-gradient(
+    circle at center,
+    rgba(74, 155, 232, 0.08),
+    rgba(74, 155, 232, 0) 70%
+  );
+  animation: auraDriftA 34s ease-in-out infinite alternate;
 }
 
 .ambient-noise {
@@ -153,9 +179,18 @@ body {
   from { transform: translate3d(0, 0, 0) scale(1); }
   to   { transform: translate3d(-4vw, 6vh, 0) scale(1.18); }
 }
+@keyframes auraDriftD {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(5vw, -4vh, 0) scale(1.1); }
+}
 @keyframes sway {
   from { transform: rotate(-2.2deg); }
   to   { transform: rotate(2.2deg); }
+}
+
+@keyframes cursorSparkleRise {
+  0%   { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, calc(-50% - 22px)) scale(0.4); }
 }
 
 @media (prefers-reduced-motion: reduce) {

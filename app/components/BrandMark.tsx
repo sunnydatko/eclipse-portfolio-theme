@@ -11,35 +11,67 @@ type BrandMarkProps = {
 export default function BrandMark({ starSize = 22, fontSize = 16 }: BrandMarkProps) {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-      {/* Eclipse icon — dark disk with diamond-ring star at 1 o'clock */}
+      {/* Pixie wing mark — abstract double fairy wing with center sparkle */}
       <Box
         component="svg"
         viewBox="0 0 22 22"
         sx={{ width: starSize, height: starSize, flexShrink: 0, display: "block" }}
         aria-hidden
       >
-        {/* Outer orbital ring */}
-        <circle
-          cx="11"
-          cy="11"
-          r="10.25"
-          fill="none"
-          stroke="rgba(168,146,216,0.28)"
-          strokeWidth="0.5"
+        <defs>
+          <linearGradient id="bmWingGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#D4C4F0" />
+            <stop offset="100%" stopColor="#7B5DB8" />
+          </linearGradient>
+          <radialGradient id="bmGlow" cx="50%" cy="45%" r="55%">
+            <stop offset="0%" stopColor="rgba(200,184,237,0.28)" />
+            <stop offset="100%" stopColor="rgba(123,93,184,0)" />
+          </radialGradient>
+        </defs>
+
+        {/* Soft glow halo */}
+        <ellipse cx="11" cy="10" rx="9" ry="6.5" fill="url(#bmGlow)" />
+
+        {/* Left upper wing */}
+        <path
+          d="M11 10.5 C11 7, 5 3.5, 2 6 C2 9.5, 7.5 11, 11 10.5 Z"
+          fill="url(#bmWingGrad)"
+          opacity="0.9"
         />
-        {/* Eclipse dark disk */}
-        <circle
-          cx="11"
-          cy="11"
-          r="8.5"
-          fill="#07050F"
-          stroke="rgba(123,93,184,0.42)"
-          strokeWidth="0.75"
+
+        {/* Right upper wing */}
+        <path
+          d="M11 10.5 C11 7, 17 3.5, 20 6 C20 9.5, 14.5 11, 11 10.5 Z"
+          fill="url(#bmWingGrad)"
+          opacity="0.9"
         />
-        {/* Corona glow at 1 o'clock (30° from top, on circle edge) */}
-        <circle cx="15.25" cy="3.64" r="2" fill="rgba(255,235,200,0.45)" />
-        {/* Star core */}
-        <circle cx="15.25" cy="3.64" r="0.85" fill="white" />
+
+        {/* Left lower wing */}
+        <path
+          d="M11 12 C11 14.5, 6 16, 4.5 14.5 C5 12.5, 8 12, 11 12 Z"
+          fill="url(#bmWingGrad)"
+          opacity="0.48"
+        />
+
+        {/* Right lower wing */}
+        <path
+          d="M11 12 C11 14.5, 16 16, 17.5 14.5 C17 12.5, 14 12, 11 12 Z"
+          fill="url(#bmWingGrad)"
+          opacity="0.48"
+        />
+
+        {/* Center 4-pointed sparkle */}
+        <path
+          d="M11 8.8 L11.55 10.45 L13.2 11 L11.55 11.55 L11 13.2 L10.45 11.55 L8.8 11 L10.45 10.45 Z"
+          fill="white"
+          opacity="0.95"
+        />
+
+        {/* Wing-tip sparkle dots */}
+        <circle cx="2.5" cy="5.5" r="0.6" fill="rgba(255,255,255,0.75)" />
+        <circle cx="19.5" cy="5.5" r="0.6" fill="rgba(255,255,255,0.75)" />
+        <circle cx="4.5" cy="15" r="0.38" fill="rgba(255,255,255,0.4)" />
+        <circle cx="17.5" cy="15" r="0.38" fill="rgba(255,255,255,0.4)" />
       </Box>
 
       <Typography
@@ -48,13 +80,13 @@ export default function BrandMark({ starSize = 22, fontSize = 16 }: BrandMarkPro
           fontFamily: "var(--font-cormorant-garamond), serif",
           fontWeight: 700,
           fontSize,
-          letterSpacing: "0.08em",
+          letterSpacing: "0.12em",
           textTransform: "uppercase",
           color: "common.white",
           lineHeight: 1,
         }}
       >
-        Alex Parker
+        Genivere
       </Typography>
     </Box>
   );

@@ -6,10 +6,10 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { testimonials } from "../helpers/config";
-import testimonialAvatar from "../images/testimonial-avatar.png";
+import graceAvatar from "../images/grace.jpg";
 
 const imageMap: Record<string, StaticImageData> = {
-  "testimonial-avatar": testimonialAvatar,
+  "grace": graceAvatar,
 };
 
 export default function Testimonial() {
@@ -22,7 +22,6 @@ export default function Testimonial() {
       id="testimonial"
       sx={{
         py: { xs: 10, md: 14 },
-        borderTop: "1px solid rgba(255,255,255,0.06)",
         position: "relative",
         zIndex: 1,
         overflow: "hidden",
@@ -43,7 +42,7 @@ export default function Testimonial() {
         }}
       />
 
-      <Container sx={{ maxWidth: "620px !important", textAlign: "center", position: "relative" }}>
+      <Container sx={{ maxWidth: "760px !important", textAlign: "center", position: "relative" }}>
         <Typography
           component="span"
           className="reveal"
@@ -69,11 +68,12 @@ export default function Testimonial() {
               backdropFilter: "blur(20px) saturate(140%)",
               WebkitBackdropFilter: "blur(20px) saturate(140%)",
               border: "1px solid rgba(150,110,255,0.08)",
-              borderRadius: "20px",
-              p: { xs: 4, md: 6 },
+              borderRadius: "32px",
+              px: { xs: 3.5, md: 5 },
+              py: { xs: 3, md: 4 },
               transform: "rotate(-0.8deg)",
               boxShadow:
-                "0 0 0 1px rgba(255,255,255,0.04) inset, 0 1px 0 rgba(255,255,255,0.08) inset, 0 0 60px rgba(123,93,184,0.28), 0 0 120px rgba(123,93,184,0.14), 0 32px 64px rgba(0,0,0,0.7)",
+                "0 0 0 1px rgba(255,255,255,0.04) inset, 0 1px 0 rgba(255,255,255,0.08) inset, 0 0 52px rgba(123,93,184,0.28), 0 0 104px rgba(123,93,184,0.14), 0 32px 64px rgba(0,0,0,0.7)",
             }}
           >
             <Box
@@ -92,11 +92,11 @@ export default function Testimonial() {
 
             <Typography
               sx={{
-                color: "primary.light",
+                color: "secondary.light",
                 fontFamily: "Georgia, serif",
                 fontSize: { xs: "6rem", md: "8rem" },
                 lineHeight: 0.5,
-                mb: 5,
+                mb: 3,
                 userSelect: "none",
                 opacity: 0.85,
               }}
@@ -110,7 +110,6 @@ export default function Testimonial() {
                 color: "grey.200",
                 fontSize: { xs: "18px", md: "21px" },
                 lineHeight: 1.85,
-                fontStyle: "italic",
                 mb: 1,
               }}
             >
@@ -123,7 +122,7 @@ export default function Testimonial() {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: 1.5,
-                mt: 4,
+                mt: 3,
               }}
             >
               {avatarSrc && (
@@ -134,7 +133,7 @@ export default function Testimonial() {
                     borderRadius: "50%",
                     overflow: "hidden",
                     border: "2px solid rgba(150,110,255,0.6)",
-                    boxShadow: "0 0 18px rgba(155,110,255,0.55), 0 0 42px rgba(155,110,255,0.18)",
+                    boxShadow: "0 0 12px rgba(155,110,255,0.35), 0 0 28px rgba(155,110,255,0.10)",
                     flexShrink: 0,
                     position: "relative",
                   }}
@@ -154,14 +153,14 @@ export default function Testimonial() {
                     color: "common.white",
                     fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 600,
-                    fontSize: { xs: 15, md: 16 },
+                    fontSize: { xs: 16, md: 18 },
                   }}
                 >
                   {name}
                 </Typography>
                 <Typography
                   sx={{
-                    color: "rgba(255,255,255,0.65)",
+                    color: "rgba(255,255,255,0.32)",
                     fontFamily: "var(--font-inter), sans-serif",
                     fontSize: { xs: 12, md: 13 },
                     letterSpacing: "0.04em",

@@ -6,58 +6,30 @@ export const social = [
 
 export const experience = [
   {
-    company: "Nexus Labs",
-    url: "https://example.com",
-    title: "AI Engineer",
-    dates: "August 2024 – Present",
+    company: "bswift",
+    url: "https://bswift.com",
+    title: "Implementation Delivery Lead",
+    dates: "April 2026 – Present",
     points: [
-      "Designed and shipped a multi-agent orchestration platform that coordinates specialized LLM agents across planning, execution, and verification — reducing manual review cycles by over 60%.",
+      "Lead end-to-end implementations of enterprise benefits technology platforms, managing technical configurations, cross-functional coordination, and delivery timelines across complex multi-system integrations.",
     ],
   },
   {
-    company: "Meridian",
-    note: "acquired by Nexus Labs",
-    url: "https://example.com",
-    title: "Senior AI Engineer",
-    dates: "September 2022 – July 2024",
+    company: "Optavise",
+    url: "https://optavise.com",
+    title: "Configuration Analyst",
+    dates: "August 2020 – April 2026",
     points: [
-      "Architected a RAG pipeline serving production search and Q&A across millions of documents, combining dense retrieval with LLM reranking to deliver sub-second, high-precision results.",
+      "Built and maintained client-facing benefits portals using HTML and CSS, translating intricate plan configurations into functional, accessible interfaces. Owned process documentation and QA workflows that reduced delivery errors and cut analyst onboarding time.",
     ],
   },
   {
-    company: "Stackbridge",
-    url: "https://example.com",
-    title: "Machine Learning Engineer",
-    dates: "February 2021 – August 2022",
+    company: "DirectPath",
+    url: "https://directpathhealth.com",
+    title: "Solutions Architect",
+    dates: "October 2015 – August 2020",
     points: [
-      "Built and deployed fine-tuned classification and extraction models into a SaaS data platform, enabling automated insight generation that replaced weeks of manual analyst work.",
-    ],
-  },
-  {
-    company: "Eclipse Systems",
-    url: "https://example.com",
-    title: "Software Engineer II",
-    dates: "March 2019 – January 2021",
-    points: [
-      "Integrated early NLP capabilities into a recruitment platform, building entity extraction and semantic matching features that improved candidate-role fit scoring accuracy.",
-    ],
-  },
-  {
-    company: "Vertex Analytics",
-    url: "https://example.com",
-    title: "Software Engineer",
-    dates: "January 2017 – December 2018",
-    points: [
-      "Developed data pipeline infrastructure and visualization tooling for an analytics platform, laying the engineering foundation that later supported ML model deployment workflows.",
-    ],
-  },
-  {
-    company: "Coastal Digital",
-    url: "https://example.com",
-    title: "Junior Software Engineer",
-    dates: "June 2015 – January 2017",
-    points: [
-      "Built fullstack web applications for enterprise clients, developing the systems-level intuition that now underpins production AI infrastructure work.",
+      "Designed technical solutions for employer clients adopting benefits navigation platforms, mapping business requirements to system capabilities and leading configuration scopes across multi-vendor environments.",
     ],
   },
 ];
@@ -104,17 +76,29 @@ export const blogPosts = [
 export const testimonials = [
   {
     quote:
-      "One of the sharpest AI engineers I've had the privilege of working with. They think in systems — agents, pipelines, orchestration — and bring the kind of architectural clarity that makes complex AI workflows feel inevitable in hindsight. A rare talent who makes every product smarter.",
-    name: "Alex Rivera",
-    title: "VP of Product, Nexus Labs",
-    image: "testimonial-avatar",
+      "Genivere is one of the most detail-oriented people I've ever worked with. She consistently goes above and beyond, excels at creating processes and documentation, and would be an asset to any technical team.",
+    name: "Grace Varney",
+    title: "Benefits Administration & System Configuration Expert",
+    image: "grace",
+  },
+  {
+    quote:
+      "Genivere demonstrated persistence and consistency throughout her coursework, balancing full-time work while completing a rigorous CS degree — a truly remarkable feat. She does not settle for surface-level concepts, frequently seeking outside resources for deeper understanding and exhibiting advanced analytical ability. Any organization will find her to be a tremendous asset.",
+    name: "Danielle Zeedick, Ed.D.",
+    title: "Cybersecurity Faculty & Mentor",
+    image: "grace",
   },
 ];
 
 export const education = [
   {
-    company: "State University",
-    dates: "2011 – 2015",
-    experience: ["Bachelor of Science in Computer Science"],
+    company: "Western Governors University",
+    url: "https://wgu.edu",
+    dates: "2022 – 2026",
+    experience: [
+      "Bachelor of Science, Computer Science",
+      "Linux Essentials — Linux Professional Institute (2024)",
+      "ITIL® Foundation — PeopleCert (2024)",
+    ],
   },
 ];

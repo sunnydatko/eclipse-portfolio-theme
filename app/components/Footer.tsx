@@ -1,50 +1,14 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import XIcon from "@mui/icons-material/X";
-import { social } from "../helpers/config";
-
-const iconMap: Record<string, React.ReactNode> = {
-  GitHub: <GitHubIcon fontSize="small" />,
-  LinkedIn: <LinkedInIcon fontSize="small" />,
-  X: <XIcon fontSize="small" />,
-};
 
 const Footer = () => (
   <Box
     className="footer"
     component="footer"
-    sx={{ borderTop: "1px solid rgba(245,241,236,0.08)" }}
   >
     <Box sx={{ padding: "24px 0" }}>
       <Container>
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 1, mb: 1.5 }}>
-          {social.map(({ label, href }) => (
-            <IconButton
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              size="small"
-              sx={{
-                color: "grey.500",
-                transition: "transform 0.2s ease, color 0.2s ease, filter 0.2s ease",
-                "&:hover": {
-                  color: "primary.light",
-                  backgroundColor: "transparent",
-                  transform: "scale(1.15)",
-                  filter: "brightness(1.2)",
-                },
-              }}
-            >
-              {iconMap[label]}
-            </IconButton>
-          ))}
-        </Box>
         <Typography
           sx={{
             textAlign: "center",
@@ -54,7 +18,7 @@ const Footer = () => (
             letterSpacing: "0.04em",
           }}
         >
-          &copy; {new Date().getFullYear()} Alex Parker. All rights reserved.
+          &copy; {new Date().getFullYear()} Genivere. All rights reserved.
         </Typography>
       </Container>
     </Box>
