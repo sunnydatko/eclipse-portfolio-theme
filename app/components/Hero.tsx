@@ -101,6 +101,21 @@ export default function Hero() {
         }}
       />
 
+      {/* Bottom fade — dissolves into the next section */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "220px",
+          background: "linear-gradient(to bottom, transparent 0%, #0a0614 100%)",
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
+
       {/* Cursor-tracked radial overlay — desktop only */}
       <Box
         ref={mouseOverlayRef}
