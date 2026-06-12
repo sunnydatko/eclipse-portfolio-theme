@@ -55,7 +55,7 @@ export default function About() {
           variant="h3"
           sx={{ mb: 4 }}
         >
-          Detail-oriented, endlessly curious, and always building.
+          The pixie behind the pixels
         </Typography>
 
         <Box
