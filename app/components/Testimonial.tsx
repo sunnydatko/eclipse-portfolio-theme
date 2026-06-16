@@ -5,7 +5,7 @@ import type { StaticImageData } from "next/image";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { testimonials } from "../helpers/config";
+import { testimonials } from "../helpers/data";
 import testimonialAvatar from "../images/testimonial-avatar.png";
 
 const imageMap: Record<string, StaticImageData> = {

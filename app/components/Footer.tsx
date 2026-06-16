@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
-import { social } from "../helpers/config";
+import { social, siteConfig } from "../helpers/data";
 
 const iconMap: Record<string, React.ReactNode> = {
   GitHub: <GitHubIcon fontSize="small" />,
@@ -54,7 +54,7 @@ const Footer = () => (
             letterSpacing: "0.04em",
           }}
         >
-          &copy; {new Date().getFullYear()} Alex Parker. All rights reserved.
+          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </Typography>
       </Container>
     </Box>

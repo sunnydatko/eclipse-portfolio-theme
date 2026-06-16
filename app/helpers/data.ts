@@ -1,3 +1,11 @@
+export const siteConfig = {
+  name: "Alex Parker",
+  title: "AI Engineer",
+  description:
+    "AI engineer focused on designing and building intelligent systems — from multi-agent pipelines and RAG architectures to production LLM integrations that deliver real business value.",
+  url: "https://example.com",
+};
+
 export const social = [
   { label: "GitHub", href: "https://github.com" },
   { label: "LinkedIn", href: "https://linkedin.com" },

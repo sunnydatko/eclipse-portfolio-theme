@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { keyframes } from "@emotion/react";
+import { siteConfig } from "../helpers/data";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -63,51 +64,60 @@ export default function Hero() {
         alignItems: "center",
         minHeight: { xs: "100svh", md: "100vh" },
         overflow: "hidden",
-        backgroundColor: "#080d1a",
+        background: "linear-gradient(to bottom, #080d1a 40%, transparent 100%)",
       }}
     >
-      {/* Background photo */}
+      {/* All background layers — masked so they fade to transparent at the bottom,
+          allowing the ambient layers behind the page to show through seamlessly */}
       <Box
-        ref={bgRef}
         aria-hidden
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url(${skyBg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: { xs: "center", md: "center" },
-          willChange: "transform, opacity",
-          transformOrigin: "center center",
-          opacity: 0.9,
+          WebkitMaskImage: "linear-gradient(to bottom, black 35%, transparent 88%)",
+          maskImage: "linear-gradient(to bottom, black 35%, transparent 88%)",
         }}
-      />
+      >
+        {/* Background photo */}
+        <Box
+          ref={bgRef}
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${skyBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: { xs: "center", md: "center" },
+            willChange: "transform, opacity",
+            transformOrigin: "center center",
+            opacity: 0.9,
+          }}
+        />
 
-      {/* Dark gradient — left-heavy so text stays legible, eclipse visible on right */}
-      <Box
-        aria-hidden
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background: {
-            xs: "linear-gradient(180deg, rgba(8,13,26,0.80) 0%, rgba(8,13,26,0.60) 50%, rgba(8,13,26,0.85) 100%)",
-            md: "linear-gradient(90deg, rgba(8,13,26,0.92) 0%, rgba(8,13,26,0.80) 30%, rgba(8,13,26,0.35) 60%, rgba(8,13,26,0.05) 100%)",
-          },
-        }}
-      />
+        {/* Dark gradient — left-heavy so text stays legible, eclipse visible on right */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background: {
+              xs: "linear-gradient(180deg, rgba(8,13,26,0.80) 0%, rgba(8,13,26,0.60) 50%, rgba(8,13,26,0.85) 100%)",
+              md: "linear-gradient(90deg, rgba(8,13,26,0.92) 0%, rgba(8,13,26,0.80) 30%, rgba(8,13,26,0.35) 60%, rgba(8,13,26,0.05) 100%)",
+            },
+          }}
+        />
 
-      {/* Cursor-tracked radial overlay — desktop only */}
-      <Box
-        ref={mouseOverlayRef}
-        aria-hidden
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background: NEUTRAL,
-          transition: "background 0.18s ease",
-          display: { xs: "none", md: "block" },
-          pointerEvents: "none",
-        }}
-      />
+        {/* Cursor-tracked radial overlay — desktop only */}
+        <Box
+          ref={mouseOverlayRef}
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background: NEUTRAL,
+            transition: "background 0.18s ease",
+            display: { xs: "none", md: "block" },
+            pointerEvents: "none",
+          }}
+        />
+      </Box>
 
       <Container sx={{ position: "relative", zIndex: 2, py: { xs: 12, md: 10 } }}>
         <Box sx={{ maxWidth: { xs: "100%", md: 560 } }}>
@@ -123,7 +133,7 @@ export default function Hero() {
               mb: 1.5,
             }}
           >
-            Hello, I&apos;m Alex Parker
+            Hello, I&apos;m {siteConfig.name}
           </Typography>
 
           {/* Accent rule — between eyebrow and headline */}

@@ -5,7 +5,7 @@ import type { StaticImageData } from "next/image";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { blogPosts } from "../helpers/config";
+import { blogPosts } from "../helpers/data";
 import blog1 from "../images/blog-1.png";
 import blog2 from "../images/blog-2.png";
 import blog3 from "../images/blog-3.png";

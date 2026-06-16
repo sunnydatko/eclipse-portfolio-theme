@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { experience } from "../helpers/config";
+import { experience } from "../helpers/data";
 
 export default function Experience() {
   return (

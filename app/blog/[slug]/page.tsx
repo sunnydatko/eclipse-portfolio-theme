@@ -6,7 +6,7 @@ import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { blogPosts } from "../../helpers/config";
+import { blogPosts } from "../../helpers/data";
 import ResponsiveMenu from "../../components/ResponsiveMenu";
 import Footer from "../../components/Footer";
 import ReadingProgress from "../../components/ReadingProgress";
